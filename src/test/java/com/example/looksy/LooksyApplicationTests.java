@@ -1,10 +1,12 @@
 package com.example.looksy;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class LooksyApplicationTests {
+@AutoConfigureMockMvc
+public class LooksyApplicationTests {
 
   @Test
   void contextLoads() {

@@ -1,14 +1,23 @@
-import java.util.Objects;
+package com.example.looksy;
 
-public class clothes {
-  private final String color; //ToDo: schützen das die Farbe später nicht verändert werden kann
+import java.util.Objects;
+import jakarta.persistence.*;
+
+@Entity
+public class Clothes {
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
+
+  private final String color;
   private final String size;
   private final String seasonUsage;
   private final String type;
   private final String material;
   private Boolean clean;
   private String washingNotes;
-  clothes(String color, String size, String seasonUsage, String type, String material, Boolean clean) {
+
+  public Clothes(String color, String size, String seasonUsage, String type, String material, Boolean clean) {
     this.color = color;
     this.size = size;
     this.seasonUsage = seasonUsage;
