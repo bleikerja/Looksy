@@ -9,11 +9,11 @@ public class Clothes {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  private final String color;
-  private final String size;
-  private final String seasonUsage;
-  private final String type;
-  private final String material;
+  private String color;
+  private String size;
+  private String seasonUsage;
+  private String type;
+  private String material;
   private Boolean clean;
   private String washingNotes;
 
@@ -25,6 +25,8 @@ public class Clothes {
     this.material = material;
     this.clean = clean;
   }
+
+  protected Clothes() {}
 
   public String getType() {
     return type;
