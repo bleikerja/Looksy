@@ -36,3 +36,4 @@ public class ClothesController {
     repository.deleteById(id);
   }
 }
+
