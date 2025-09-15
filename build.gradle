@@ -19,12 +19,11 @@ repositories {
 }
 
 dependencies {
-    // Spring Boot Starter
+    implementation 'org.springdoc:springdoc-openapi-ui:1.7.0'
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
-    // Datenbank (H2 für Tests, du kannst später MySQL/PostgreSQL nehmen)
     runtimeOnly 'com.h2database:h2'
 
     // Tests

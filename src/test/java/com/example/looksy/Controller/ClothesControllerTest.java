@@ -1,12 +1,12 @@
-package com.example.looksy;
+package com.example.looksy.Controller;
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.MediaType;
+import org.springframework.http.MediaType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
-import static org.mockito.Mockito.*;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -20,18 +20,23 @@ public class ClothesControllerTest {
   @Test
   public void testCreateClothes() throws Exception {
     String json = """
-      {
-        "color": "Blau",
-        "size": "M",
-        "seasonUsage": "Winter",
-        "type": "Jacke",
-        "material": "Wolle",
-        "clean": true
-      }
-    """;
+  {
+    "color": {
+      "red": 0,
+      "green": 255,
+      "blue": 255
+    },
+    "size": "_M",
+    "seasonUsage": "Winter",
+    "type": "Tops",
+    "material": "Cotton",
+    "clean": true
+  }
+  """;
 
     mockMvc.perform(post("/api/clothes")
             .contentType(String.valueOf(MediaType.APPLICATION_JSON))
+            .accept(MediaType.APPLICATION_JSON)
             .content(json))
         .andExpect(status().isOk());
   }
