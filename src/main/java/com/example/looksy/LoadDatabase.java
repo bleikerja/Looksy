@@ -19,7 +19,7 @@ public class LoadDatabase {
   CommandLineRunner initDatabase(ClothesRepository repository) {
     return args -> {
       log.info("Preloading Clothes " + repository.save(new Clothes(Color.black, Size._38, Season.inBetween, Type.Pants, Material.jeans, true)));
-      log.info("Preloading Clothes " + repository.save(new Clothes(Color.cyan, Size._38, Season.Summer, Type.Tops, Material.Cotton, false)));
+      log.info("Preloading Clothes " + repository.save(new Clothes(Color.cyan, Size._40, Season.Summer, Type.Tops, Material.Cotton, false)));
     };
   }
 }
