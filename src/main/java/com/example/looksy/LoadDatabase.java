@@ -15,6 +15,7 @@ public class LoadDatabase {
 
   private static final Logger log = LoggerFactory.getLogger(LoadDatabase.class);
 
+
   @Bean
   CommandLineRunner initDatabase(ClothesRepository repository) {
     return args -> {
